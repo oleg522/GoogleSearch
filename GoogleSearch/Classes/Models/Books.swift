@@ -20,6 +20,10 @@ class Books: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.items = try container.decode([Book].self, forKey: .items)
     }
+    
+    init(books: [Book]) {
+        self.items = books
+    }
 }
 
 
